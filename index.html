@@ -1,36 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700&display=swap");
+      body {
+        background-color: hsl(30, 38%, 92%);
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Product preview card component</title>
+      .row {
+        display: flex;
+        height: 50%;
+        width: 40%;
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+      }
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+      .text {
+        font-size: 18px;
+        font-family: "Montserrat";
+        color: hsl(228, 12%, 48%);
+        font-weight: 700;
+        line-height: 1.5;
+      }
 
-  Perfume
+      .col-1 {
+        width: 50%;
+      }
 
-  Gabrielle Essence Eau De Parfum
+      .col-1 img {
+        width: 100%;
+        height: auto;
+      }
+      .second-img {
+        display: none;
+      }
 
-  A floral, solar and voluptuous interpretation composed by Olivier Polge, 
-  Perfumer-Creator for the House of CHANEL.
+      .col-2 {
+        padding: 20px;
+        left: 400px;
+        width: 50%;
+        position: absolute;
+      }
 
-  $149.99
-  $169.99
+      .title {
+        font-size: 35px;
+        font-family: "Fraunces";
+        font-weight: 700;
+        color: hsl(212, 21%, 14%);
+      }
 
-  Add to Cart
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      .price {
+        color: hsla(140, 93%, 16%, 0.824);
+        font-size: 35px;
+        font-family: "Fraunces";
+        font-weight: 700;
+      }
+
+      .prices {
+        display: flex;
+        align-items: center;
+      }
+      .btn {
+        width: 80%;
+        border-radius: 10px;
+        padding: 15px 40px;
+        background-color: hsla(140, 93%, 16%, 0.824);
+        border: none;
+        font-weight: 700;
+        color: #fff;
+        font-family: "Montserrat";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .secondary-price {
+        margin-left: 20px;
+        color: hsl(228, 12%, 48%);
+        font-family: "Montserrat";
+      }
+      .perfume {
+        font-size: 13px;
+        color: hsl(228, 12%, 48%);
+        letter-spacing: 0.5em;
+        font-family: "Montserrat";
+        font-weight: 700;
+      }
+
+      .title-mobile {
+        display: none;
+      }
+      .text-mobile {
+        display: none;
+      }
+
+      @media screen and (max-width: 768px) {
+        body {
+          background-color: hsl(30, 38%, 92%);
+          height: 100vh;
+        }
+        .row {
+          flex-direction: column;
+          width: 90%;
+          height: auto;
+          border-radius: 10px;
+          overflow: hidden;
+        }
+
+        .col-1 {
+          position: static;
+          width: 100%;
+          justify-content: center;
+        }
+
+        .col-2 {
+          position: static;
+          width: 100%;
+          justify-content: center;
+        }
+
+        .first-img {
+          display: none;
+        }
+
+        .second-img {
+          display: block;
+          width: 150px;
+          height: auto;
+        }
+        .title {
+          display: none;
+        }
+        .title-mobile {
+          display: block;
+          font-size: 30px;
+          font-family: "Fraunces";
+          font-weight: 700;
+          color: hsl(212, 21%, 14%);
+        }
+        .btn {
+          width: 88%;
+        }
+        .text {
+          display: none;
+        }
+        .text-mobile {
+          display: block;
+          font-size: 13px;
+          font-family: "Montserrat";
+          color: hsl(228, 12%, 48%);
+          font-weight: 700;
+          line-height: 1.5;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-1">
+        <img src="assets/image-product-desktop.jpg" class="first-img" />
+        <img src="assets/image-product-mobile.jpg" class="second-img" />
+      </div>
+      <div class="col-2">
+        <span class="perfume">PERFUME</span>
+
+        <h2 class="title">Gabrielle<br />Essence Eau<br />De Parfum</h2>
+        <h2 class="title-mobile">Gabrielle Essence<br />EauDe Parfum</h2>
+
+        <p class="text">
+          A floral, solar and voluptuous<br />interpretation composed by<br />Olivier
+          Polge, Perfumer-Creator<br />for the House of CHANEL.
+        </p>
+        <p class="text-mobile">
+          A floral, solar and voluptuous<br />interpretation composed by
+          Olivier<br />
+          Polge, Perfumer-Creator for the House of<br />CHANEL.
+        </p>
+
+        <div class="prices">
+          <h2 class="price">$149.99</h2>
+          <span class="secondary-price"><del>$169.99</del></span>
+        </div>
+
+        <button class="btn">
+          <img src="assets/icon-cart.svg" />&nbsp; Add to Cart
+        </button>
+      </div>
+    </div>
+  </body>
 </html>
